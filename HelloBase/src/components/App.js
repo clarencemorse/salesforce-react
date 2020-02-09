@@ -1,43 +1,64 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'antd';
+import { Layout, Button, Steps, Icon, Row, Col, Divider } from 'antd';
 const ButtonGroup = Button.Group;
-import logo from './logo.svg'
-import 'bootstrap/dist/css/bootstrap.min.css'
+const { Content } = Layout;
+const { Step } = Steps;
+import BPFooter from './BPFooter';
+import BPHeader from './BPHeader';
 import './App.css'
+import BPTable from './BPTable';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React + Visualforce</h1>
-        </header>
-        <div className="jumbotron">
-          <h1 className="display-4">Hello, world!</h1>
-          <p className="lead">This is a simple react app for Visualforce.</p>
-          <p>ANTD Buttons: 
-            <ButtonGroup> 
-              <Button type="primary">
-                <Icon type="left" />
-                Go back
-              </Button>
-              <Button type="primary">
-                Go forward
-                <Icon type="right" />
-              </Button>
-            </ButtonGroup>
-          </p>
-          <hr className="my-4"/>
-          <p>It uses Webpack for resource bundling and Bootstrap for styling.</p>
-          <a className="btn btn-primary btn-lg" href="https://github.com/wearemav3rik/sfdx-react-plugin" role="button">Learn more</a>
-        </div>
-        <div className="ml-4">
-          <p>This is your HelloBase project and it's using API Version 43.0</p>
-          <p>This is your org: clarencemorse company and it will expire on Wed Mar 11 2020</p>
-        </div>
+        <Layout>
+          <BPHeader />
+          <Content className="content-body">
+            <Row>
+              <Col>
+                <Steps>
+                  <Step status="finish" title="Login" icon={<Icon type="user" />} />
+                  <Step status="finish" title="Validation" icon={<Icon type="solution" />} />               
+                  <Step status="wait" title="Done" icon={<Icon type="smile-o" />} />
+                </Steps>
+              </Col>
+            </Row>
+            <Divider/> 
+            <Row>
+              <Col>
+                <BPTable />
+              </Col>
+            </Row>
+            <Divider />
+            <Row>
+              <Col>
+                <ButtonGroup> 
+                  <Button type="primary">
+                    <Icon type="left" />
+                    Go back
+                  </Button>
+                  <Button type="primary">
+                    Go forward
+                    <Icon type="right" />
+                  </Button>
+                </ButtonGroup>
+              </Col>
+            </Row>
+            <Divider />
+            <Row>
+                <Col>It uses Webpack for resource bundling and ANT Design for styling.</Col>
+            </Row>            
+          </Content>
+
+          <BPFooter />
+        </Layout>
       </div>
-    )
+    );
   }
 }
 

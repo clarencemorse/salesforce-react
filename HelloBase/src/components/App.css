@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 .App {
-  text-align: center;
+  font-family:'Lato', sans-serif;
 }
 
 .App-logo {
@@ -7,19 +9,24 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.app-header {
+  min-height: 15vh;
 }
 
-.App-title {
-  font-size: 1.5em;
+.app-footer {
+  min-height:5vh;
+  padding:5px;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.content-body {
+  background-color:#ffffff; 
+  min-height: 50vh;
+  height:80vh;
+  overflow-y: scroll;
 }
 
 @keyframes App-logo-spin {
