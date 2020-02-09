@@ -1,0 +1,4 @@
+<apex:page id="HelloBase" lightningStylesheets="true">
+  <div id="root"></div>
+  <script src="/resource/HelloBase/App.bundle.js" type="text/javascript"></script>
+</apex:page>
